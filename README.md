@@ -4,6 +4,7 @@ Asesmen Covid-19 adalah aplikasi untuk merekam data dan memeriksa tingkat terken
 ## Tools
 - Visual Basic .Net
 - Microsoft Access 
+- Bunifu Framework
 
 ## Screenshot (Desain Adobe Xd)
 <img src="https://raw.githubusercontent.com/suryomujahid/survey-covid19/master/Web%201280%20%E2%80%93%201.png"
