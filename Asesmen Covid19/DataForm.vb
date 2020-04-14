@@ -8,6 +8,23 @@
         DA.Fill(DS, "tb_data")
         DataGridView1.DataSource = DS.Tables("tb_data")
         DataGridView1.Enabled = True
+        Label9.Text = (From Rows In DataGridView1.Rows.Cast(Of DataGridViewRow)() Where Not Rows.IsNewRow AndAlso Rows.Cells("hasil_resiko").Value.ToString = "Resiko Rendah").Count
+        Label10.Text = (From Rows In DataGridView1.Rows.Cast(Of DataGridViewRow)() Where Not Rows.IsNewRow AndAlso Rows.Cells("hasil_resiko").Value.ToString = "Resiko Sedang").Count
+        Label11.Text = (From Rows In DataGridView1.Rows.Cast(Of DataGridViewRow)() Where Not Rows.IsNewRow AndAlso Rows.Cells("hasil_resiko").Value.ToString = "Resiko Tinggi").Count
+        Dim a, b, c As Integer
+        a = Label9.Text
+        b = Label10.Text
+        c = Label11.Text
+        If a > b And a > c Then
+            Label16.Text = "Resiko Rendah"
+        ElseIf b > a And b > c Then
+            Label16.Text = "Resiko Sedang"
+        ElseIf c > a And c > b Then
+            Label16.Text = "Resiko Tinggi"
+        Else
+            Label16.Text = "-"
+        End If
+
     End Sub
     Sub run()
         Dim objcmd As New System.Data.OleDb.OleDbCommand
